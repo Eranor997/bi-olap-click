@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  click:
+    container_name: ch
+    image: clickhouse/clickhouse-server
+    ports:
+      - 8200:8200
+      - 9000:9000 
+    volumes:
+      - CH_DB:/var/lib/clickhouse
+    deploy:
+      restart_policy:
+        condition: unless-stopped
+
+volumes:
+  CH_DB:
