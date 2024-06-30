@@ -1,4 +1,4 @@
-insert into direct_log.ShkOnPlace_buf (shk_id, dt, place_cod) VALUES 
+insert into direct_log.ShkOnPlace_buf (shk_id, dt, place_id) VALUES 
 (3213123, '2024-06-28 12:05:12', 5352),
 (23141, '2024-06-28 12:09:12', 2342),
 (534252, '2024-06-28 12:10:12', 3242),
