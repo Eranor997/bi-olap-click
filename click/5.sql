@@ -3,7 +3,7 @@ create table stg.ShkOnPlace
     shk_id    UInt64,
     dt        DateTime,
     place_id UInt32,
-    dt_load   DateTime
+    dt_load   DateTime MATERIALIZED now()
 )
 engine = MergeTree
 partition by toYYYYMMDD(dt)
@@ -14,7 +14,6 @@ create table direct_log.ShkOnPlace_buf
 (
     shk_id    UInt64,
     dt        DateTime,
-    place_id UInt32,
-    dt_load   DateTime MATERIALIZED now()
+    place_id UInt32
 )
 engine = Buffer(stg, ShkOnPlace,  16, 10, 100, 10000, 1000000, 10000000, 100000000);
